@@ -9,11 +9,13 @@ class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MyHomePage();
+    return const MyHomePage();
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -60,12 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
 class PageWidget extends StatelessWidget {
   final String title;
 
-  PageWidget({required this.title});
+  const PageWidget({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(title, style: TextStyle(fontSize: 24)),
+      child: Text(title, style: const TextStyle(fontSize: 24)),
     );
   }
 }

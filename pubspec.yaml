@@ -11,6 +11,8 @@ dependencies:
   flutter: 
     sdk: flutter
   shared_preferences: ^2.2.0
+  flutter_local_notifications: ^15.1.0+1
+  awesome_notifications: ^0.7.4+1
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
