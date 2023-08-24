@@ -8,9 +8,18 @@ class UserView extends GetView<UserController> {
   const UserView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final ctl = Get.put(UserController());
+    return Scaffold(
       body: Column(
-        children: [],
+        children: [
+          Text('UserView'),
+          ElevatedButton(
+              onPressed: () {
+                ctl.initdata();
+                ctl.getdata();
+              },
+              child: Text('初始化列表数据库'))
+        ],
       ),
     );
   }

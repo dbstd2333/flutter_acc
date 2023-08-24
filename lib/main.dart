@@ -11,7 +11,6 @@ void main() async {
   ));
   await GetStorage.init();
   AwesomeNotifications().initialize(
-      // set the icon to null if you want to use the default app icon
       null,
       [
         NotificationChannel(
@@ -22,14 +21,12 @@ void main() async {
             defaultColor: Color(0xFF9D50DD),
             ledColor: Colors.white)
       ],
-      // Channel groups are only visual and are not required
       channelGroups: [
         NotificationChannelGroup(
             channelGroupKey: 'basic_channel_group',
             channelGroupName: 'Basic group')
       ],
       debug: true);
-
   runApp(const MyApp());
 }
 
