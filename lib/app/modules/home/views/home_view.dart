@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
 import '../../index/views/index_view.dart';
-import '../../filterlist/views/filterlist_view.dart';
+//import '../../filterlist/views/filterlist_view.dart';
 import '../../user/views/user_view.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -27,7 +27,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: const <Widget>[
         IndexView(),
-        FilterlistView(),
         UserView(),
       ][currentPageIndex],
       bottomNavigationBar: NavigationBar(
@@ -44,14 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
             label: '主页',
           ),
           NavigationDestination(
-            icon: Icon(Icons.filter_list_outlined),
-            selectedIcon: Icon(Icons.filter_list),
-            label: '详情',
-          ),
-          NavigationDestination(
             selectedIcon: Icon(Icons.person_2),
             icon: Icon(Icons.person_2_outlined),
-            label: '用户',
+            label: '我',
           ),
         ],
       ),

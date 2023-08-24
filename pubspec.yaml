@@ -10,9 +10,10 @@ dependencies:
   get: 4.6.5
   flutter: 
     sdk: flutter
-  shared_preferences: ^2.2.0
-  flutter_local_notifications: ^15.1.0+1
   awesome_notifications: ^0.7.4+1
+  path_provider: ^2.1.0
+  fluttertoast: ^8.2.2
+  get_storage: 2.1.1
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
@@ -22,3 +23,5 @@ dev_dependencies:
 flutter: 
   uses-material-design: true
 
+  assets:
+    - lib/assets/

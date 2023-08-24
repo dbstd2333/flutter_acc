@@ -7,6 +7,7 @@ abstract class Routes {
   static const INDEX = _Paths.INDEX;
   static const FILTERLIST = _Paths.FILTERLIST;
   static const USER = _Paths.USER;
+  static const ADDNEW = _Paths.ADDNEW;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const INDEX = '/index';
   static const FILTERLIST = '/filterlist';
   static const USER = '/user';
+  static const ADDNEW = '/addnew';
 }
