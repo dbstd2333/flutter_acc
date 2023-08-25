@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          background: const Color.fromARGB(255, 245, 245, 245),
+          background: const Color.fromARGB(255, 247, 248, 248),
         ),
       ),
     );

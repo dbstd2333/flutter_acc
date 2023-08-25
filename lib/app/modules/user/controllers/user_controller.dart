@@ -1,10 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../index/controllers/index_controller.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:convert';
 
-class UserController extends GetxController {
+class UserController extends GetxController with WidgetsBindingObserver {
   //TODO: Implement UserController
   final idxctl = Get.put(IndexController());
   final count = 0.obs;
@@ -14,12 +15,20 @@ class UserController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    WidgetsBinding.instance!.addObserver(this);
   }
 
   @override
   void onReady() {
     super.onReady();
     gettotal();
+  }
+
+  @override
+  void onClose() {
+    // 移除监听
+    WidgetsBinding.instance!.removeObserver(this);
+    super.onClose();
   }
 
   void gettotal() async {
@@ -41,9 +50,16 @@ class UserController extends GetxController {
       var sum = 0.0;
       for (var i = 0; i < moneyitems.length; i++) {
         sum = moneyitems[i] + sum;
+        print(sum);
       }
       totalmoney = sum;
     }
+    update();
+  }
+
+  void updatedata() {
+    print('Returned to the page');
+    gettotal();
   }
 
   void initdata() async {

@@ -12,6 +12,7 @@ class UserView extends GetView<UserController> {
     double screenWidth = queryData.size.width;
     double screenHeight = queryData.size.height;
     final ctl = Get.put(UserController());
+    ctl.updatedata();
     return Scaffold(
         appBar: AppBar(
           title: const Text(
@@ -41,57 +42,59 @@ class UserView extends GetView<UserController> {
               ),
               Container(
                 margin: const EdgeInsets.fromLTRB(15, 10, 15, 0),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                  color: const Color.fromARGB(255, 255, 255, 255),
-                ),
                 child: SizedBox(
-                  height: 50,
-                  child: InkWell(
-                    onTap: () => showDialog<String>(
-                      context: context,
-                      builder: (BuildContext context) => AlertDialog(
-                        title: const Text(
-                          '你确定啊？',
-                          style: TextStyle(fontWeight: FontWeight.w900),
-                        ),
-                        content: Container(
-                          height: 200,
-                          child: Column(children: [
-                            Image.asset(
-                              'assets/sure.jpeg',
-                              height: 200,
-                            )
-                          ]),
-                        ),
-                        actions: <Widget>[
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text('手滑'),
+                  height: 40,
+                  child: Material(
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: BorderRadius.circular(8),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(8),
+                      onTap: () => showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text(
+                            '你确定啊？',
+                            style: TextStyle(fontWeight: FontWeight.w900),
                           ),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                              ctl.initdata();
-                            },
-                            child: const Text('YES'),
+                          content: Container(
+                            height: 200,
+                            child: Column(children: [
+                              Image.asset(
+                                'assets/sure.jpeg',
+                                height: 200,
+                              )
+                            ]),
                           ),
-                        ],
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text('手滑'),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                                ctl.initdata();
+                              },
+                              child: const Text('YES'),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    child: Container(
-                      margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            '初始化列表数据库',
-                            style: TextStyle(
-                                color: Color.fromARGB(255, 40, 40, 40)),
-                          )
-                        ],
+                      child: Container(
+                        margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              '初始化列表数据库',
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: Color.fromARGB(255, 30, 30, 30)),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),

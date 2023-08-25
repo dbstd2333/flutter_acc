@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
 import '../../index/views/index_view.dart';
-//import '../../filterlist/views/filterlist_view.dart';
 import '../../user/views/user_view.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -49,19 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class PageWidget extends StatelessWidget {
-  final String title;
-
-  const PageWidget({super.key, required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(title, style: const TextStyle(fontSize: 24)),
     );
   }
 }
